@@ -31,6 +31,7 @@ function gen_header(){
         <td class='top_table_desc'>
         <div class='comp_desc_title'>
             <strong>COMPANY DESCRIPTION<br />
+ <?php           echo $_SESSION['test'];?>
             <span class='comp_desc'>asdf asdf asdf asdf asdf asdf asdf 
                   asdf asdf asdf asdf</span></strong></div>
         </td>
@@ -40,7 +41,7 @@ function gen_header(){
             if (!isset($_SESSION['token'])) {
                 $_SESSION['$client'] = googleLogIn();
             } else {
-                $_SESSION['$client'] = getClient();        
+                getClient();        
                 getUserInfo();
             }
 ?>

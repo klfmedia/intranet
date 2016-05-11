@@ -1,8 +1,7 @@
 <?php
 function get_Calendar_events(){
     if (isset($_SESSION['token'])) {
-        $client = $_SESSION['$client'];
-        $service = new Google_Service_Calendar($client); 
+        $service = new Google_Service_Calendar($_SESSION['$client']); 
         $calendarId = 'primary';
         $optParams = array(
           'maxResults' => 10,

@@ -40,14 +40,12 @@
             <div class="luncher">Luncher Module</div>
           </td>
           <td class="body_right_sidebar">
-            <div>
-            <span>Calendar <br /></span>
-            <div class="calendar">
+            
+            <div class="calendar"><span>Calendar <br /></span><div class="calendar-scroll">
 <?php   
                 get_Calendar_events();
 ?>  
-            </div><br />
-            </div>
+            </div></div><br />
             <div class="news">News Widget</div><br />
             <div class="applauz">Applauz App</div>           
           </td>

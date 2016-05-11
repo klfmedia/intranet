@@ -172,9 +172,11 @@ ul#nav li a:hover {
     font-size: medium;
     font-weight: bold;
     color: #FF0000; 
-    overflow-y:auto;
 }
-/*************************************** CALENDAR FEED ******************/  
+/*************************************** CALENDAR FEED ******************/ 
+.calendar-scroll{
+    overflow-y:auto;  
+} 
 .event-container {
     padding-right: 8px;
     padding-top: 10px;
