@@ -8,5 +8,7 @@ Template: thrive
 Version: 1.0.0
 */
 
-
-@import url('../thrive/style.css');
+#site-branding {
+  padding: 1.5em 20px;
+  display: table;
+  width: 101%; }
