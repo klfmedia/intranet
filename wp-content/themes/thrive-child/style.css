@@ -9,6 +9,46 @@ Version: 1.0.0
 */
 
 #site-branding {
-  padding: 1.5em 20px;
+  padding: 1.5em 30px;
   display: table;
   width: 101%; }
+/*
+#menu-site-search {
+	display:none;
+}
+
+#thrive-secondary-menu-search{
+	display:none;	
+}*/
+
+#thrive-secondary-menu-search{
+	display:none;	
+}
+
+.ai1ec-subscribe-container{
+	display:none;	
+}
+
+.col-md-4{
+	display:none;		
+}
+
+@media (min-width: 992px){
+	.col-md-5 {
+	    width: 75%;
+	}
+	.col-md-8 {
+	    /* width: 66.66666667%; */
+	    width: 98%;
+	}
+}
+
+.buddypress .thrive-activity-container {
+  margin: 0 -15px;
+  height: 246px; 
+ }
+ 
+.thrive-activity-container ul, ol {
+    max-height: 246px !important;
+    overflow: auto	!important;
+}

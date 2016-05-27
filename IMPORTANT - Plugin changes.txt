@@ -1,0 +1,32 @@
+PETERS-LOGIN-REDIRECT PLUGIN TO WORK WITH SUBWAY PLUGIN:
+{
+	wp-content\plugins\subway\functions.php			
+	line 189
+	CHANGE THE HOME_URL() FUNCTION FOR THE URL OF THE WPLOGIN_REDIRECT PAGE SO THAT WE GET SPECIFIC PAGES AFTER LOGIN FOR DIFFERENT USER
+	return apply_filters( 'subway_login_redirect', 'http://localhost/wordpress/wp-content/plugins/peters-login-redirect/wplogin_redirect_control.php' /* home_url() */);
+}
+
+BUDDYPRESS PLUGIN TO STOP SHOWING MESSAGE OF CURRENT USER BEING WRONGLY INITIALIZED ON THE CUSTOMIZE PAGE
+{
+	wp-content\plugins\buddypress\bp-core\bp-core-dependency.php
+	line 225
+	COMMENT OUT THE LINE TO PREVENT THE PAGE FROM SHOWING THE ERROR MESSAGE
+	//		_doing_it_wrong( __FUNCTION__, __( 'The current user is being initialized without using $wp->init().', 'buddypress' ), '1.7' );
+}
+
+ALL-IN-ONE-CALENDAR USES A DEPRECATED FUNCTION AND WP RETURNS AN WARNING FOR ALL NON ADMINISTRATOR OR EDITOR USERS.
+{
+	wp-content\plugins\all-in-one-event-calendar\app\model\search.php
+	line 627
+	COMMENT OUT THE DEPRECATED FUNCTION AND USE THE NEW ONE
+	//			get_currentuserinfo();
+				wp_get_current_user();
+}
+
+MODIFY THE "MEMBERS ACTIVITY STREAM" TO CHANGE THE TEXTBOX HINT TO "WHAT ARE YOU WORKING ON?"
+{
+	wp-content/themes/thrive/buddypress/activity/post-form.php
+	line 37
+	CHANGE THE COMMENT FROM "What's new, " to "What are you working on, "
+}
+

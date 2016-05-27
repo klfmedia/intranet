@@ -34,7 +34,7 @@
 				if ( bp_is_group() ) {
 					$greetings = sprintf( __( "What's new in %s, %s?", 'thrive' ), bp_get_group_name(), bp_get_user_firstname( bp_get_loggedin_user_fullname() ) );
 				} else {
-					$greetings = sprintf( __( "What's new, %s?", 'thrive' ), bp_get_user_firstname( bp_get_loggedin_user_fullname() ) );
+					$greetings = sprintf( __( "What are you working on, %s?", 'thrive' ), bp_get_user_firstname( bp_get_loggedin_user_fullname() ) );
 				}
 			?>
 			
