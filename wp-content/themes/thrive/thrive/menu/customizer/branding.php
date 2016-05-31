@@ -21,7 +21,7 @@ $wp_customize->add_section($section_id = 'thrive_branding', array(
 $wp_customize->add_setting($setting_id = 'thrive_branding_height', array(
 	'type' => 'theme_mod', // or 'option'
 	'capability' => 'manage_options',
-	'default' => 100,
+	'default' => 50,
 	'transport' => 'postMessage',
 	'sanitize_callback' => 'thrive_handle_empty_var',
 ));
@@ -31,9 +31,9 @@ $wp_customize->add_control('thrive_branding_height', array(
 	'section' => 'thrive_branding',
 	'label' => __( 'Branding Height', 'thrive' ),
 	'description' => __( 'Use the slider below to adjust the height of the the Header Section.', 'thrive' ),
-	'default' => 100,
+	'default' => 50,
 	'input_attrs' => array(
-		'min' => 100,
+		'min' => 50,
 		'max' => 175,
 		'step' => 1,
 	),

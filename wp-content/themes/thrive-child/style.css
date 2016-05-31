@@ -12,14 +12,22 @@ Version: 1.0.0
   padding: 1.5em 30px;
   display: table;
   width: 101%; }
-/*
+
+/*CHANGE THE HEIGHT OF THE TOP BAR WHERE THE LOGO IS*/
+/*CHANGE THE PADDING TO 10px, it was 30px*/
+#thrive_nav {
+  display: table;
+  width: 100%;
+  padding: 10px 0; 
+}
+
 #menu-site-search {
 	display:none;
 }
 
 #thrive-secondary-menu-search{
 	display:none;	
-}*/
+}
 
 #thrive-secondary-menu-search{
 	display:none;	
@@ -42,13 +50,78 @@ Version: 1.0.0
 	    width: 98%;
 	}
 }
-
+/* CHANGES TO MAKE THE "WHAT ARE YOU WORKING ON" FEATURE A SET HEIGHT AND ADD VERTICAL SCROLLBAR */
 .buddypress .thrive-activity-container {
   margin: 0 -15px;
-  height: 246px; 
+  height: 189px; 
  }
  
 .thrive-activity-container ul, ol {
-    max-height: 246px !important;
+    max-height: 189px !important;
     overflow: auto	!important;
+}
+
+/************* END OF CHANGE ******************/
+
+/************** MAKE THE HOMEPAGE FULL WIDTH ON BIGGER SCREENS >1140px *********************/
+#content.site-content .limiter{
+  margin: 0 auto;
+  max-width: none;
+  padding: 10px 10px 0 20px;
+}
+.limiter {
+  max-width: none;
+}
+/************* END OF CHANGE ******************/
+
+/************* ADD A VERTICAL SCROLLBAR FOR THE QUESTIONS FEATURE ON HOMEPAGE ************/
+.dwqa-questions-list {
+	border-top: 1px solid #ddd;
+	overflow-y: auto;
+	height:210px;
+}
+
+
+/***test*/
+.activity-header p{
+	margin:0 auto;
+}
+.activity-inner p{
+	margin:0 auto;
+}
+.buddypress ul#activity-stream li {
+    padding: 0px 25px; 
+}
+.buddypress ul#activity-stream li .activity-comments ul li {
+    margin: 0 0 -5px 0;
+}
+.buddypress ul#activity-stream li .activity-comments ul .acomment-meta p {
+     margin-bottom: 0px;
+}
+.acomment-content p{
+	display: block;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+.content-area ul {
+    padding-left: 0em;
+    margin-bottom: 0em;
+}
+.thrive-inline #buddypress #whats-new-options {
+    margin-bottom: 10px;
+}
+ #whats-new-textarea textarea {
+    min-height: 40px !important; 
+    background-color: #dddedf;
+ }
+ .wpb_button, .wpb_content_element, ul.wpb_thumbnails-fluid>li {
+    margin-bottom: 15px !important;
+}
+.dwqa-questions-footer {
+    margin-top: 15px;
+}
+.vc_row .buddypress {
+    margin-bottom: 30px;
 }

@@ -470,7 +470,8 @@ caption {
 
 .limiter {
   margin: 0 auto;
-  max-width: 1140px; }
+  max-width: 1140px;
+}
 
 #lock-outline .material-icons {
   color: rgba(0, 0, 0, 0.12); }

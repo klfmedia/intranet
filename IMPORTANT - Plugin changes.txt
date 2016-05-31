@@ -30,3 +30,47 @@ MODIFY THE "MEMBERS ACTIVITY STREAM" TO CHANGE THE TEXTBOX HINT TO "WHAT ARE YOU
 	CHANGE THE COMMENT FROM "What's new, " to "What are you working on, "
 }
 
+MODIFY THE HEIGHT OF THE BRANDING CONTRAINER ON TOP OF THE PAGE TO ALLOW TO MINIMUM TO BE SET TO 50px
+{
+	wp-content/themes/thrive/thrive/menu/customizer/branding.php
+	line 24			'default' => 50,
+	line 34 		'default' => 50,
+	line 36 		'min' => 50,
+	
+	IT WAS ORIGINALLY 100
+}
+
+MODIFY THE QUESTIONS FORM FROM THE HOMEPAGE TO REMOVE THE SEARCH BAR AND THE FILTER
+{
+	wp-content/plugins/dw-question-answer/inc/Shortcode.php
+	line 8			'dwqa-list-questions-homepage',
+	line 22			add_shortcode( 'dwqa-list-questions-homepage', array( $this, 'archive_question_homepage') );
+	line 56 		make a copy of the function "PUBLIC FUNCTION ARCHIVE_QUESTION()" and rename it as "PUBLIC FUNCTION ARCHIVE_QUESTION_HOMEPAGE()"
+		line 63		modify the existing line to: 		"dwqa_load_template( 'archive', 'question-homepage' );"
+		
+	ALSO MAKE A COPY OF THE archive-question.php FILE AND RENAME IT archive-question-homepage.php
+		INSIDE THIS FILE COMMENT OUT the line 10 "<?php  do_action( 'dwqa_before_questions_archive' ) ?>" OR ADD THE FOLLOWING {
+			<!-- WE COMMENT OUT THE NEXT LINE TO REMOVE THE SEARCH BAR 
+				AND THE FILTER FROM THE HOMEPAGE QUESTIONS BOX -->
+			<?php // do_action( 'dwqa_before_questions_archive' ) ?>
+		}
+	
+}
+
+MODIFY THE "WHAT ARE YOU WORKING ON" FEATURE ON THE HOME PAGE TO REMOVE THE TABS RSS FEEDBACK ROW
+{
+	wp-content/themes/thrive/buddypress/activity/index.php
+	line 36			DELETE THE ENTIRE DIV COMPONENT <div class="item-list-tabs activity-type-tabs" role="navigation"> ... </div>
+	line 132		DELETE THE ENTIRE DIV COMPONENT <div class="item-list-tabs no-ajax" id="subnav" role="navigation"> ... </div>
+	
+	A COPY OF THE ORIGINAL FILE IS LOCATED IN THE wp-content\themes\thrive-child\plugins filename:Copy of buddypress-activity-index.php
+}
+
+IN CASE THAT WE WANT TO REMOVE THE GROUP NAMES FROM THE DROP DOWN LIST ON THE "WHAT ARE YOU WORKING ON" FOR THE HOMEPAGE
+{
+	wp-content/themes/thrive/buddypress/activity/post-form.php
+	Comment out lines from 62 to 68
+}
+
+
+}

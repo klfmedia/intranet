@@ -10,6 +10,7 @@ Layout: Content-Sidebar
 }
 .site-main {
 	margin: 0 25% 0 0;
+	padding:300px;
 }
 .site-content .widget-area {
 	float: right;

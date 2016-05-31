@@ -5,6 +5,7 @@ function theme_enqueue_styles() {
 
 }
 
+/* ***** REMOVE THE ADMIN BAR FOR ALL USER THAT DOES NOT HAVE PERMISSION TO DELETE_PAGES *********/
 function mytheme_remove_admin_bar() {
 	if ( ! current_user_can( 'delete_pages' ) ) {
 		show_admin_bar( false );
@@ -12,5 +13,6 @@ function mytheme_remove_admin_bar() {
 }
 add_action( 'after_setup_theme', 'mytheme_remove_admin_bar' );
 
+/* ****** ADD A SHORTCODE TO MODIFY THE MAIN QUESTIONS SHORTCODE TO REMOVE THE SEARCH BAR, ETC. ************/
 
 ?>
