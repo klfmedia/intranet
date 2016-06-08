@@ -13,6 +13,15 @@ function mytheme_remove_admin_bar() {
 }
 add_action( 'after_setup_theme', 'mytheme_remove_admin_bar' );
 
-/* ****** ADD A SHORTCODE TO MODIFY THE MAIN QUESTIONS SHORTCODE TO REMOVE THE SEARCH BAR, ETC. ************/
+/* ***********make categories required for event submission***************************/
+function my_em_validate($result,$EM_Event){
+  if( empty($EM_Event->get_categories()->categories) ){
+     $EM_Event->add_error( __("category is required.", "dbem") );
+     return false;
+  }
+  return $result;
+}
+add_filter('em_event_validate_meta','my_em_validate',10,2);
+
 
 ?>

@@ -76,14 +76,15 @@ class Thrive_Members_Birthday_Widget extends WP_Widget {
 					$date = $member->value;
 
 					// Get user birthday of this year.
-					$user_current_bday = strtotime( sprintf( date( "F d %s", strtotime( $date) ), date("Y") ) );
+					$user_current_bday = strtotime( sprintf( date( "F d %s", strtotime( $date) ),date("Y") ) );
 
 					$now = strtotime( sprintf( date( "F d %s", strtotime( "now") ), date("Y") ) );
 
 					$selected_scope = intval( $instance['filter'] );
 
 					// Yearly (Default)
-					$scope = strtotime( sprintf("December 31 %s", date("Y") ) );
+					$scope = strtotime( sprintf( date( "F d Y", strtotime("+ 180 days"))));
+//					$scope = strtotime( sprintf("December 31 %s", date("Y") ) );
 
 					if ( 2 === $selected_scope ) {
 						// This Month.
