@@ -1,0 +1,116 @@
+PETERS-LOGIN-REDIRECT PLUGIN TO WORK WITH SUBWAY PLUGIN:
+{
+	wp-content\plugins\subway\functions.php			
+	line 189
+	CHANGE THE HOME_URL() FUNCTION FOR THE URL OF THE WPLOGIN_REDIRECT PAGE SO THAT WE GET SPECIFIC PAGES AFTER LOGIN FOR DIFFERENT USER
+	return apply_filters( 'subway_login_redirect', 'http://localhost/wordpress/wp-content/plugins/peters-login-redirect/wplogin_redirect_control.php' /* home_url() */);
+}
+
+BUDDYPRESS PLUGIN TO STOP SHOWING MESSAGE OF CURRENT USER BEING WRONGLY INITIALIZED ON THE CUSTOMIZE PAGE
+{
+	wp-content\plugins\buddypress\bp-core\bp-core-dependency.php
+	line 225
+	COMMENT OUT THE LINE TO PREVENT THE PAGE FROM SHOWING THE ERROR MESSAGE
+	//		_doing_it_wrong( __FUNCTION__, __( 'The current user is being initialized without using $wp->init().', 'buddypress' ), '1.7' );
+}
+
+ALL-IN-ONE-CALENDAR USES A DEPRECATED FUNCTION AND WP RETURNS AN WARNING FOR ALL NON ADMINISTRATOR OR EDITOR USERS.
+{
+	wp-content\plugins\all-in-one-event-calendar\app\model\search.php
+	line 627
+	COMMENT OUT THE DEPRECATED FUNCTION AND USE THE NEW ONE
+	//			get_currentuserinfo();
+				wp_get_current_user();
+}
+
+WP-FILEBASE USES A DEPRECATED FUNCTION AND WORDPRESS RETURNS AN ERROR WHEN TRYING TO DOWNLOAD OR VIEW ANY FILE.
+{
+	wp-content/plugins/wp-filebase/classes/File.php
+	line 587
+	COMMENT OUT THE DEPRECATED FUNCTION AND USE THE NEW ONE
+	//			get_currentuserinfo();
+				wp_get_current_user();
+}
+
+MODIFY THE "MEMBERS ACTIVITY STREAM" TO CHANGE THE TEXTBOX HINT TO "WHAT ARE YOU WORKING ON?"
+{
+	wp-content/themes/thrive/buddypress/activity/post-form.php
+	line 37
+	CHANGE THE COMMENT FROM "What's new, " to "What are you working on, "
+}
+
+MODIFY THE HEIGHT OF THE BRANDING CONTRAINER ON TOP OF THE PAGE TO ALLOW TO MINIMUM TO BE SET TO 50px
+{
+	wp-content/themes/thrive/thrive/menu/customizer/branding.php
+	line 24			'default' => 50,
+	line 34 		'default' => 50,
+	line 36 		'min' => 50,
+	
+	IT WAS ORIGINALLY 100
+}
+
+MODIFY THE QUESTIONS FORM FROM THE HOMEPAGE TO REMOVE THE SEARCH BAR AND THE FILTER
+{
+	wp-content/plugins/dw-question-answer/inc/Shortcode.php
+	line 8			'dwqa-list-questions-homepage',
+	line 22			add_shortcode( 'dwqa-list-questions-homepage', array( $this, 'archive_question_homepage') );
+	line 56 		make a copy of the function "PUBLIC FUNCTION ARCHIVE_QUESTION()" and rename it as "PUBLIC FUNCTION ARCHIVE_QUESTION_HOMEPAGE()"
+		line 63		modify the existing line to: 		"dwqa_load_template( 'archive', 'question-homepage' );"
+		
+	ALSO MAKE A COPY OF THE archive-question.php FILE AND RENAME IT archive-question-homepage.php
+		INSIDE THIS FILE COMMENT OUT the line 10 "<?php  do_action( 'dwqa_before_questions_archive' ) ?>" OR ADD THE FOLLOWING {
+			<!-- WE COMMENT OUT THE NEXT LINE TO REMOVE THE SEARCH BAR 
+				AND THE FILTER FROM THE HOMEPAGE QUESTIONS BOX -->
+			<?php // do_action( 'dwqa_before_questions_archive' ) ?>
+		}
+	
+}
+
+MODIFY THE "WHAT ARE YOU WORKING ON" FEATURE ON THE HOME PAGE TO REMOVE THE TABS RSS FEEDBACK ROW
+{
+	wp-content/themes/thrive/buddypress/activity/index.php
+	line 36			DELETE THE ENTIRE DIV COMPONENT <div class="item-list-tabs activity-type-tabs" role="navigation"> ... </div>
+	line 132		DELETE THE ENTIRE DIV COMPONENT <div class="item-list-tabs no-ajax" id="subnav" role="navigation"> ... </div>
+	
+	A COPY OF THE ORIGINAL FILE IS LOCATED IN THE wp-content\themes\thrive-child\plugins filename:Copy of buddypress-activity-index.php
+}
+
+IN CASE THAT WE WANT TO REMOVE THE GROUP NAMES FROM THE DROP DOWN LIST ON THE "WHAT ARE YOU WORKING ON" FOR THE HOMEPAGE
+{
+	wp-content/themes/thrive/buddypress/activity/post-form.php
+	Comment out lines from 62 to 68
+}
+
+TO CHANGE THE CAPTION OF THE MEMBERS WIDGET TO READ EMPLOYEES ON THE HOMEPAGE
+{
+	WE CREATE A LANGUAGE FILE USING THE PROGRAM POEDIT 
+	WE CREATE THE FOLDER wp-content\languages\plugins AND INSIDE WE PLACE THE 2 CREATED FILES buddypress-en_US.po AND buddypress-en_US.mo
+	INSIDE WE MADE THE NECESSARY CHANGES FROM MEMBERS TO EMPLOYEES WHERE APPLICABLE 
+}
+
+TO CHANGE THE WAY THE NEW EMPLOYEES WIDGET WORKS
+{
+	wp-content/plugins/buddypress/bp-members/classes/class-bp-core-members-widget.php
+	line 118
+	MODIFY THE CLASS item avatar and put 'col-xs-3 pd-right-5', leave the old class as a comment in the same line
+	<!--item-avatar--><div class="col-xs-3 pd-right-5">
+}
+
+TO CHANGE THE ARROW ON THE BACK BUTTON FOR THE ALBUM SELECT ON HOMEPAGE
+{
+	wp-content/plugins/foogallery/extensions/albums/album-stack.php
+	line 16
+	MODIFY &larr AND CHANGE IT FOR &laquo;
+}
+
+TO MAKE THE BIRTHDAY WIDGET SHOW THE NEXT 6 MONTHS OF BIRTHDAYS STARTING ON CURRENT DAY
+{
+	wp-content/themes/thrive/thrive/theme-widgets/members-birthday.php
+	line 86
+	COMMENT OUT LINE 86 AND ADD THE FOLLOWING
+	$scope = strtotime( sprintf( date( "F d Y", strtotime("+ 364 day"))));
+//	$scope = strtotime( sprintf("December 31 %s", date("Y") ) );
+	
+}
+
+}

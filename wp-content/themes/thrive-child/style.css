@@ -28,23 +28,18 @@ Version: 1.0.0
 #content.site-content{
 	margin-top: 66px;
 }
-
 #menu-site-search {
 	display:none;
 }
-
 #thrive-secondary-menu-search{
 	display:none;	
 }
-
 #thrive-secondary-menu-search{
 	display:none;	
 }
-
 .ai1ec-subscribe-container{
 	display:none;	
 }
-
 .col-md-4{
 	display:none;		
 }
@@ -75,7 +70,7 @@ Version: 1.0.0
 #content.site-content .limiter{
   margin: 0 auto;
   max-width: none;
-  padding: 10px 10px 0 20px;
+  padding: 10px 10px 0 10px;
 }
 					/******* THIS CHANGE IS FOR THE TOP MENU *******/
 .limiter {
@@ -178,6 +173,31 @@ Version: 1.0.0
 }
 /************* END OF CHANGE ******************/
 
+
+
+/************* CHANGE THE FORMAT OF THE EVENTS TABLE ON HOMEPAGE ********************************/
+.css-events-list table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+    border-collapse: collapse !important;
+    width: 100% !important;
+}
+.css-events-list td, .css-events-list th {
+    border: 1px solid #ddd !important;
+    text-align: left !important;
+    padding: 8px !important;
+    background-color: transparent !important;
+}
+.css-events-list tr:nth-child(even){background-color: #ffdfdf !important}
+.css-events-list tr:hover {background-color: #dcdcdc !important}
+.css-events-list th{
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    background-color: #e76e6e !important;
+    color: white !important;
+}
+/************* END OF CHANGE ******************/
+
+
 /***test*/
 .activity-header p{
 	margin:0 auto;
@@ -228,49 +248,18 @@ Version: 1.0.0
 
 
 /************* CHANGE THE ANIMATION FOR THE HOMEPAGE LOMBARDI QUOTES ********************************/
-.content-slider-lombardi {
-  width: 100%;
-  height: 250px;
-}
-.slider-lombardi {
-  height: 250px;
-  width: 90%;
-  margin: 20px auto 0;
-  overflow: visible;
-  position: relative;
-}
-.mask-lombardi {
-  overflow: hidden;
-  height: 250px;
-}
-.slider-lombardi ul {
-  margin: 0;
-  padding: 0;
-  position: relative;
-}
-.slider-lombardi li {
-  width: 100%;
-  height: 250px;
-  position: absolute;
-  top: -225px;
-  list-style: none;
-}
-.slider-lombardi .quote {
-  margin-top: 10px;
-  font-size: 40px;
-  font-style: italic;
-  color: red;
-}
-.slider-lombardi .source {
-  font-size: 25px;
-  text-align: right;
-  color: black;
-}
-.slider-lombardi .anim1-lombardi {
-  -moz-animation: cycle-lombardi 45s ease-out infinite;
-  -webkit-animation: cycle-lombardi 45s ease-out infinite;
-  animation: cycle-lombardi 45s ease-out infinite;
-}
+.content-slider-lombardi { width: 100%; height: 250px;}
+.slider-lombardi { height: 250px; width: 90%; margin: 20px auto 0; overflow: visible;
+  position: relative;}
+.mask-lombardi { overflow: hidden; height: 250px;}
+.slider-lombardi ul { margin: 0; padding: 0; position: relative;}
+.slider-lombardi li { width: 100%; height: 250px; position: absolute; top: -225px; list-style: none;}
+.slider-lombardi .quote { margin-top: 10px; font-size: 40px; font-style: italic; color: red;}
+.slider-lombardi .source { font-size: 25px; text-align: right; color: black;}
+.slider-lombardi .anim1-lombardi {  
+	-moz-animation: cycle-lombardi 45s ease-out infinite; 
+	-webkit-animation: cycle-lombardi 45s ease-out infinite; 
+	animation: cycle-lombardi 45s ease-out infinite;}
 .slider-lombardi .anim2-lombardi {
   -moz-animation: cycle2-lombardi 45s ease-out infinite;
   -webkit-animation: cycle2-lombardi 45s ease-out infinite;
@@ -319,27 +308,22 @@ Version: 1.0.0
   -webkit-animation: cycle10 60s ease-out infinite;
   animation: cycle10 60s ease-out infinite;
 }*/
-.slider-lombardi:hover li {
-  -moz-animation-play-state: paused;
-  -webkit-animation-play-state: paused;
-  animation-play-state: paused;
-}
+.slider-lombardi:hover li {-moz-animation-play-state: paused; -webkit-animation-play-state: paused;
+  animation-play-state: paused;}
 
 @-moz-keyframes cycle-lombardi {
-  0% { top: 0; }
-  2% { top: 0; }
+  0% { top: -100px; }
+  2% { top: 100px; }
   14% { top: 100px; opacity: 1; z-index: 0; }
   18% { top: 225px; opacity: 0; z-index: 0; }
-  24% { top: -125px; opacity: 0; z-index: -1; }
-  96% { top: -125px; opacity: 0; }
-  100% { top: 0; opacity: 1; }
+  20% { top: -125px; opacity: 0; z-index: -1; }
+  100% { top: -125px; opacity: 0; z-index: -1; }
 }
-
 @-moz-keyframes cycle2-lombardi {
   0% { top: -125px; opacity: 0; }
-  18% { top: -125px; opacity: 0; }
-  20% { top: 0; opacity: 1; }
-  36% { top: 0; opacity: 1; z-index: 0; }
+  16% { top: -125px; opacity: 1; }
+  18% { top: 100px; opacity: 1; }
+  36% { top: 100px; opacity: 1; z-index: 0; }
   38% { top: 225px; opacity: 0; z-index: 0; }
   40% { top: -125px; opacity: 0; z-index: -1; }
   100% { top: -125px; opacity: 0; z-index: -1; }
@@ -348,9 +332,8 @@ Version: 1.0.0
 @-moz-keyframes cycle3-lombardi {
   0% { top: -125px; opacity: 0; }
   36% { top: -125px; opacity: 0; }
-  38% { top: 0; opacity: 1; }
-  52% { top: 0; opacity: 1; }
-  56% { top: 0; opacity: 1; z-index: 0; }
+  38% { top: 100px; opacity: 1; }
+  56% { top: 100px; opacity: 1; z-index: 0; }
   58% { top: 225px; opacity: 0; z-index: 0; }
   60% { top: -125px; opacity: 0; z-index: -1; }
   100% { top: -125px; opacity: 0; z-index: -1; }
@@ -359,9 +342,8 @@ Version: 1.0.0
 @-moz-keyframes cycle4-lombardi {
   0% { top: -125px; opacity: 0; }
   56% { top: -125px; opacity: 0; }
-  58% { top: 0; opacity: 1; }
-  72% { top: 0; opacity: 1; }
-  76% { top: 0; opacity: 1; z-index: 0; }
+  58% { top: 100px; opacity: 1; }
+  76% { top: 100px; opacity: 1; z-index: 0; }
   78% { top: 225px; opacity: 0; z-index: 0; }
   80% { top: -125px; opacity: 0; z-index: -1; }
   100% { top: -125px; opacity: 0; z-index: -1; }
@@ -370,9 +352,8 @@ Version: 1.0.0
 @-moz-keyframes cycle5-lombardi {
   0% { top: -125px; opacity: 0; }
   76% { top: -125px; opacity: 0; }
-  78% { top: 0; opacity: 1; }
-  92% { top: 0; opacity: 1; }
-  96% { top: 0; opacity: 1; z-index: 0; }
+  78% { top: 100px; opacity: 1; }
+  96% { top: 100px; opacity: 1; z-index: 0; }
   98% { top: 225px; opacity: 0; z-index: 0; }
   100% { top: -125px; opacity: 0; z-index: -1; }
 }
