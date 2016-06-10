@@ -23,5 +23,24 @@ function my_em_validate($result,$EM_Event){
 }
 add_filter('em_event_validate_meta','my_em_validate',10,2);
 
+/* *********** hide the wordpress standard roles ***************************/
+
+function exclude_role($roles) {
+	//Hide Defualt Roles
+	if (isset($roles['author'])) {
+		unset($roles['author']);
+	}
+	if (isset($roles['editor'])) {
+		unset($roles['editor']);
+	}
+	if (isset($roles['subscriber'])) {
+		unset($roles['subscriber']);
+	}
+	if (isset($roles['contributor'])) {
+		unset($roles['contributor']);
+	}
+	return $roles;
+}
+add_filter('editable_roles', 'exclude_role' );
 
 ?>

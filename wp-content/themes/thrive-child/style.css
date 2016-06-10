@@ -43,28 +43,11 @@ Version: 1.0.0
 .col-md-4{
 	display:none;		
 }
-
 @media (min-width: 992px){
-	.col-md-5 {
-	    width: 75%;
-	}
-	.col-md-8 {
-	    /* width: 66.66666667%; */
-	    width: 98%;
-	}
-}
-/* CHANGES TO MAKE THE "WHAT ARE YOU WORKING ON" FEATURE A SET HEIGHT AND ADD VERTICAL SCROLLBAR */
-.buddypress .thrive-activity-container {
-  margin: 0 -15px;
-  height: 189px; 
- }
- 
-.thrive-activity-container ul, ol {
-    max-height: 189px !important;
-    overflow: auto	!important;
+	.col-md-5 { width: 75%;	}
+	.col-md-8 { width: 98%;	}
 }
 
-/************* END OF CHANGE ******************/
 
 /************** MAKE THE HOMEPAGE FULL WIDTH ON BIGGER SCREENS >1140px *********************/
 #content.site-content .limiter{
@@ -78,13 +61,6 @@ Version: 1.0.0
 }
 /************* END OF CHANGE ******************/
 
-/************* ADD A VERTICAL SCROLLBAR FOR THE QUESTIONS FEATURE ON HOMEPAGE ************/
-.dwqa-questions-list {
-	border-top: 1px solid #ddd;
-	overflow-y: auto;
-	height:210px;
-}
-/************* END OF CHANGE ******************/
 
 /************* MAKE THE TOP MARGIN 10px FOR THE COMPANY VALUES H1 TITLE ************/
 .wpb_wrapper h1{
@@ -93,89 +69,48 @@ Version: 1.0.0
 /************* END OF CHANGE ******************/
 
 
-/************* CHANGE THE BIRTHDAY WIDGET ********************************/
-		/******* ALIGN THE TITLE WITH THE EMPLOYEES WIDGET AND MAKE IT BIGGER *******/
-.widget_thrive_members_birthday_widget h3{
-	margin-top: 0 !important;
-    margin-bottom: 10px;
-    font-size: 24px !important;	
-    text-transform: initial !important;
-    font-weight: normal !important;
-    color: red !important;
-}
-#thrive_members_birthday_widget-2{
-	padding: 10px 15px 15px !important;
-}
-/************* ADD A VERTICAL SCROLLBAR FOR THE BIRTHDAYS FEATURE ON HOMEPAGE ************/
-.thrive-inline .sidebar-widgets ul {
-    padding-left: 0;
-    height: 222px;
-    max-height: 222px;
-    overflow-y: auto;
-    overflow-x: hidden;
+/************* CHANGES TO THE "WHAT ARE YOU WORKING ON" FEATURE **************/
+					/******* ADD A VERTICAL SCROLLBAR  *******/
+.buddypress .thrive-activity-container {
+  margin: 0 -15px;
+  height: 189px; 
+ }
+.thrive-activity-container ul, ol {
+    max-height: 189px !important;
+    overflow: auto	!important;
 }
 /************* END OF CHANGE ******************/
 
-/************* CHANGE THE NEW EMPLOYEES WIDGET ********************************/
-		/******* MAKE THE NEWEST ACTIVE POPULAR LIST INVISIBLE *******/
-.item-options#members-list-options {
-    height: 0;
-    margin-bottom: 0 !important;
-    visibility: hidden;
-}
-		/******* CHANGE THE APPEARANCE OF THE ICONS *******/
-.turbo_widget ul li {
-    margin-bottom: 40px !important;
-}
-.turbo_widget h3{
-	margin-top: 10px !important;
-	margin-bottom: 10px;
+
+/*************** CHANGES TO THE QUESTIONS FEATURE *********************/
+					/******* ADD A VERTICAL SCROLLBAR  *******/
+.dwqa-questions-list {
+	border-top: 1px solid #ddd;
+	overflow-y: auto;
+	height:210px;
 }
 /************* END OF CHANGE ******************/
 
-/************* CHANGE THE CALENDAR PAGE ********************************/
-		/******* CHANGE THE BACKGROUND COLOR OF THE ADD NEW BUTTON *******/
-.css-events-admin a.em-button {
-    background: red !important;
-}
-		/******* CHANGE THE WIDTH OF THE YEAR LIST ON ADD EVENT *******/
-.ui-datepicker select.ui-datepicker-year {
-    width: 50%;
-}
-.fc-today-button{
-    background: #e53935;
-    color: rgb(255, 255, 255);
-}
-.fc-content-skeleton td{
-    border-color: black !important;
-}
-/************* END OF CHANGE ******************/
 
-/************* CHANGE THE FEATURE MEMBER WIDGET ********************************/
-
-.fmember-member-details .fmember-links {
-    visibility: hidden;
-    height: 0;
-}
-/************* END OF CHANGE ******************/
-
-/************* CHANGE THE ALBUM GALLERY HEADING ********************************/
+/************* CHANGE THE ALBUM GALLERY ON HOMEPAGER ********************************/
 		/******* MOVE THE ALBUM NAME TO THE LEFT *******/
 .foogallery-stack-album h2{
     text-align: left;
     padding-left: 20px;
 }
-
 		/******* CHANGE THE BACKGROUND COLOR OF THE ARROW *******/
 .foogallery-stack-album .back {
     color: black !important;
     background: red !important;
 }
+		/******* CHANGE THE COLOR OF THE PICTURE BORDERS *******/
+.tp-grid li {
+    border: 3px solid black !important;
+}
 /************* END OF CHANGE ******************/
 
 
-
-/************* CHANGE THE FORMAT OF THE EVENTS TABLE ON HOMEPAGE ********************************/
+/************* CHANGE THE FORMAT OF THE EVENTS LIST TABLE ON HOMEPAGE ********************************/
 .css-events-list table {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif !important;
     border-collapse: collapse !important;
@@ -198,7 +133,119 @@ Version: 1.0.0
 /************* END OF CHANGE ******************/
 
 
-/***test*/
+/************* CHANGE THE COMPANY POLLS WIDGET ********************************/
+		/******* CHANGE THE COLOR OF THE BUTTON TEXT *******/
+.yop_poll_vote_button{
+	background-color: #dd3333 !important;
+	color:white !important;
+}
+		/******* CHANGE THE HEIGHT OF THE ELEMENT TO MATCH THE BIRTHDAYS WIDGET *******/
+.yop-poll-container {
+    min-height: 247px;
+}
+/************* END OF CHANGE ******************/
+
+
+/************* CHANGE THE BIRTHDAY WIDGET ********************************/
+		/******* ALIGN THE TITLE WITH THE EMPLOYEES WIDGET AND MAKE IT BIGGER *******/
+.widget_thrive_members_birthday_widget h3{
+	margin-top: 0 !important;
+    margin-bottom: 10px;
+    font-size: 24px !important;	
+    text-transform: initial !important;
+    font-weight: normal !important;
+    color: red !important;
+}
+#thrive_members_birthday_widget-2{
+	padding: 10px 0 15px !important;
+	margin-bottom: 0 !important;
+}
+		/******** ADD A VERTICAL SCROLLBAR FOR THE BIRTHDAYS FEATURE ON HOMEPAGE ************/
+.thrive-inline .sidebar-widgets ul {
+    padding-left: 0;
+    height: 222px;
+    max-height: 222px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+/************* END OF CHANGE ******************/
+
+
+/************* CHANGE THE NEW EMPLOYEES WIDGET ********************************/
+		/******* MAKE THE NEWEST ACTIVE POPULAR LIST INVISIBLE *******/
+.item-options#members-list-options {
+    height: 0;
+    margin-bottom: 0 !important;
+    visibility: hidden;
+}
+		/******* CHANGE THE HEIGHT OF THE ELEMENT TO MATCH THE BIRTHDAYS WIDGET *******/
+.item_height_homepage .vc_column-inner {
+    min-height: 283px;
+}
+		/******* CHANGE THE APPEARANCE OF THE ICONS *******/
+.turbo_widget ul li {
+    margin-bottom: 40px !important;
+}
+.turbo_widget h3{
+	margin-top: 10px !important;
+	margin-bottom: 10px;
+}
+/************* END OF CHANGE ******************/
+
+
+/************* CHANGE THE FEATURE MEMBER WIDGET ********************************/
+
+.fmember-member-details .fmember-links {
+    visibility: hidden;
+    height: 0;
+}
+/************* END OF CHANGE ******************/
+
+/************* CHANGE THE LOMBARDI POINTS WIDGET ********************************/
+		/******* HIDE THE SECOND TITLE INSIDE THE WIDGET *******/
+.turbo_widget .h6 {
+    visibility: hidden !important;
+}
+		/******* CHANGE THE COLOR OF THE TITLE INSIDE THE WIDGET *******/
+.turbo_widget .widget_title {
+    color: red;
+}
+/************* END OF CHANGE ******************/
+
+
+/************* CHANGE THE CALENDAR PAGE ********************************/
+		/******* CHANGE THE BACKGROUND COLOR OF THE ADD NEW BUTTON *******/
+.css-events-admin a.em-button {
+    background: red !important;
+}
+		/******* CHANGE THE WIDTH OF THE YEAR LIST ON ADD EVENT *******/
+.ui-datepicker select.ui-datepicker-year {
+    width: 50%;
+}
+.fc-today-button{
+    background: #e53935;
+    color: rgb(255, 255, 255);
+}
+.fc-content-skeleton td{
+    border-color: black !important;
+}
+/************* END OF CHANGE ******************/
+
+
+/************* CHANGE THE EMPLOYEES DIRECTORY PAGE ********************************/
+#members-dir-list ul#members-list li {
+    padding: 5px 25px !important;
+}
+.col-xs-9 .item .item-title {
+    padding-top: 20px !important;
+}
+.friendship-button {
+    visibility: hidden;
+}
+/************* END OF CHANGE ******************/
+
+
+/************* VARIOUS CHANGES ***************/
 .activity-header p{
 	margin:0 auto;
 }
@@ -241,19 +288,19 @@ Version: 1.0.0
 .vc_row .buddypress {
     margin-bottom: 30px;
 }
-
+/************* END OF CHANGE ******************/
 
 
 
 
 
 /************* CHANGE THE ANIMATION FOR THE HOMEPAGE LOMBARDI QUOTES ********************************/
-.content-slider-lombardi { width: 100%; height: 250px;}
-.slider-lombardi { height: 250px; width: 90%; margin: 20px auto 0; overflow: visible;
+.content-slider-lombardi { width: 100%; height: 234px;}
+.slider-lombardi { height: 234px; width: 90%; margin: 20px auto 0; overflow: visible;
   position: relative;}
-.mask-lombardi { overflow: hidden; height: 250px;}
+.mask-lombardi { overflow: hidden; height: 234px;}
 .slider-lombardi ul { margin: 0; padding: 0; position: relative;}
-.slider-lombardi li { width: 100%; height: 250px; position: absolute; top: -225px; list-style: none;}
+.slider-lombardi li { width: 100%; height: 234px; position: absolute; top: -225px; list-style: none;}
 .slider-lombardi .quote { margin-top: 10px; font-size: 40px; font-style: italic; color: red;}
 .slider-lombardi .source { font-size: 25px; text-align: right; color: black;}
 .slider-lombardi .anim1-lombardi {  
@@ -503,7 +550,7 @@ Version: 1.0.0
   96% { top: 0; opacity: 1; z-index: 0; }
   98% { top: 125px; opacity: 0; z-index: 0; }
   100% { top: 125px; opacity: 0; z-index: 0; }
-}
+}*/
 /************* END OF CHANGE ******************/
 
 
@@ -552,7 +599,7 @@ Version: 1.0.0
 .slider .source {
   font-size: 25px;
   text-align: right;
-  color: white;
+  color: black;
 }
 
 .slider .anim1 {
