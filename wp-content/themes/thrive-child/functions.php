@@ -5,7 +5,7 @@ function theme_enqueue_styles() {
 
 }
 
-/* ***** REMOVE THE ADMIN BAR FOR ALL USER THAT DOES NOT HAVE PERMISSION TO DELETE_PAGES *********/
+/* ***** REMOVE THE ADMIN BAR FOR ALL USERS THAT DO NOT HAVE PERMISSION TO DELETE_PAGES *********/
 function mytheme_remove_admin_bar() {
 	if ( ! current_user_can( 'delete_pages' ) ) {
 		show_admin_bar( false );

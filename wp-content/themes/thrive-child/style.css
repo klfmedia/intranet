@@ -84,7 +84,7 @@ Version: 1.0.0
 
 /*************** CHANGES TO THE QUESTIONS FEATURE *********************/
 					/******* ADD A VERTICAL SCROLLBAR  *******/
-.dwqa-questions-list {
+.questions_homepage .dwqa-questions-list {
 	border-top: 1px solid #ddd;
 	overflow-y: auto;
 	height:210px;

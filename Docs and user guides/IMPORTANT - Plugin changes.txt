@@ -49,7 +49,7 @@ MODIFY THE HEIGHT OF THE BRANDING CONTRAINER ON TOP OF THE PAGE TO ALLOW TO MINI
 	IT WAS ORIGINALLY 100
 }
 
-MODIFY THE QUESTIONS FORM FROM THE HOMEPAGE TO REMOVE THE SEARCH BAR AND THE FILTER
+MODIFY THE QUESTIONS FORM FROM THE HOMEPAGE TO REMOVE THE SEARCH BAR AND THE FILTER AND TO SHOW ONLY THE OPEN QUESTIONS
 {
 	wp-content/plugins/dw-question-answer/inc/Shortcode.php
 	line 8			'dwqa-list-questions-homepage',
@@ -57,13 +57,26 @@ MODIFY THE QUESTIONS FORM FROM THE HOMEPAGE TO REMOVE THE SEARCH BAR AND THE FIL
 	line 56 		make a copy of the function "PUBLIC FUNCTION ARCHIVE_QUESTION()" and rename it as "PUBLIC FUNCTION ARCHIVE_QUESTION_HOMEPAGE()"
 		line 63		modify the existing line to: 		"dwqa_load_template( 'archive', 'question-homepage' );"
 		
-	ALSO MAKE A COPY OF THE archive-question.php FILE AND RENAME IT archive-question-homepage.php
-		INSIDE THIS FILE COMMENT OUT the line 10 "<?php  do_action( 'dwqa_before_questions_archive' ) ?>" OR ADD THE FOLLOWING {
-			<!-- WE COMMENT OUT THE NEXT LINE TO REMOVE THE SEARCH BAR 
-				AND THE FILTER FROM THE HOMEPAGE QUESTIONS BOX -->
+	********** THERE IS A COPY OF THE archive-question-homepage.php LOCATED ON wwp-content\themes\thrive-child\plugins\dw-question-answer\templates
+	ALSO MAKE A COPY OF THE archive-question.php FILE AND RENAME IT archive-question-homepage.php located on
+	wp-content\plugins\dw-question-answer\templates
+	line 10
+	INSIDE THIS FILE COMMENT OUT the line 10 "<?php  do_action( 'dwqa_before_questions_archive' ) ?>" OR ADD THE FOLLOWING 
+		(
+			<!-- WE COMMENT OUT THE NEXT LINE TO REMOVE THE SEARCH BAR AND THE FILTER FROM THE HOMEPAGE QUESTIONS BOX -->
 			<?php // do_action( 'dwqa_before_questions_archive' ) ?>
-		}
-	
+		)
+	line 16
+	WE ADD THE FOLLOWING CODE AND REPLADE THE EXISTING ONE
+		(
+				<?php while ( dwqa_has_question() ) : dwqa_the_question(); ?>
+		<!-- WE ADD THE STATUS VARIABLE AND ASSIGN THE CURRENT QUESTION STATUS -->				
+				<?php $status = get_post_meta( get_the_ID(), '_dwqa_status', true ); ?>
+		<!-- WE COMPARE IF THE QUESTION'S STATUS IS OTHER THAN RESOLVED or CLOSED TO ShOW IT -->				
+				<?php if ( $status != 'resolved' && $status != 'close' && (get_post_status() == 'publish' || ( get_post_status() == 'private' && dwqa_current_user_can( 'edit_question', get_the_ID() ) ) )	) : ?>
+					<?php dwqa_load_template( 'content', 'question' ) ?>
+		)
+
 }
 
 MODIFY THE "WHAT ARE YOU WORKING ON" FEATURE ON THE HOME PAGE TO REMOVE THE TABS RSS FEEDBACK ROW
