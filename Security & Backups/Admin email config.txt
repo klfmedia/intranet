@@ -1,0 +1,10 @@
+Name: 
+	KLF Media Intranet
+username: 
+	klf.media.intranet@gmail.com
+Password:
+	KLFm3d141ntr4n3t
+DoB:
+	06/10/1916
+Current Email address (for recovery):
+	allison@loyaltysource.com
