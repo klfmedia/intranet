@@ -2,16 +2,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Thrive Translate\n"
 "POT-Creation-Date: 2016-02-16 18:52+0800\n"
-"PO-Revision-Date: 2016-02-16 18:52+0800\n"
+"PO-Revision-Date: 2016-06-17 14:00-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.8.8\n"
 "X-Poedit-KeywordsList: _e;__;_n;_x;_n_noop;esc_attr_e;esc_attr_x;esc_attr__;"
 "esc_html__;esc_html_e;esc_html_x;_nx_noop;_ex;_;gettext;gettext_noop\n"
-"X-Poedit-Basepath: ../\n"
+"X-Poedit-Basepath: ..\n"
+"Language: en_US\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../shoemaker/404.php:20
@@ -82,8 +83,7 @@ msgstr ""
 msgid "Footer"
 msgstr ""
 
-#: ../shoemaker/functions.php:139
-#: ../shoemaker/inc/customizer/off-canvas.php:12
+#: ../shoemaker/functions.php:139 ../shoemaker/inc/customizer/off-canvas.php:12
 msgid "Off Canvas"
 msgstr ""
 
@@ -293,8 +293,7 @@ msgstr ""
 #: ../twentyfourteen/content-audio.php:17
 #: ../twentyfourteen/content-featured-post.php:28
 #: ../twentyfourteen/content-gallery.php:17
-#: ../twentyfourteen/content-image.php:17
-#: ../twentyfourteen/content-link.php:17
+#: ../twentyfourteen/content-image.php:17 ../twentyfourteen/content-link.php:17
 #: ../twentyfourteen/content-quote.php:17
 #: ../twentyfourteen/content-video.php:17 ../twentyfourteen/content.php:19
 #: ../twentysixteen/inc/template-tags.php:95
@@ -312,36 +311,30 @@ msgstr ""
 msgid "Tagged %1$s"
 msgstr ""
 
-#: ../shoemaker/inc/template-tags.php:66
-#: ../twentyfourteen/content-aside.php:37
+#: ../shoemaker/inc/template-tags.php:66 ../twentyfourteen/content-aside.php:37
 #: ../twentyfourteen/content-audio.php:37
 #: ../twentyfourteen/content-gallery.php:37
-#: ../twentyfourteen/content-image.php:37
-#: ../twentyfourteen/content-link.php:37
+#: ../twentyfourteen/content-image.php:37 ../twentyfourteen/content-link.php:37
 #: ../twentyfourteen/content-quote.php:37
 #: ../twentyfourteen/content-video.php:37 ../twentyfourteen/content.php:38
 #: ../twentyfourteen/inc/widgets.php:194
 msgid "Leave a comment"
 msgstr ""
 
-#: ../shoemaker/inc/template-tags.php:66
-#: ../twentyfourteen/content-aside.php:37
+#: ../shoemaker/inc/template-tags.php:66 ../twentyfourteen/content-aside.php:37
 #: ../twentyfourteen/content-audio.php:37
 #: ../twentyfourteen/content-gallery.php:37
-#: ../twentyfourteen/content-image.php:37
-#: ../twentyfourteen/content-link.php:37
+#: ../twentyfourteen/content-image.php:37 ../twentyfourteen/content-link.php:37
 #: ../twentyfourteen/content-quote.php:37
 #: ../twentyfourteen/content-video.php:37 ../twentyfourteen/content.php:38
 #: ../twentyfourteen/inc/widgets.php:194
 msgid "1 Comment"
 msgstr ""
 
-#: ../shoemaker/inc/template-tags.php:66
-#: ../twentyfourteen/content-aside.php:37
+#: ../shoemaker/inc/template-tags.php:66 ../twentyfourteen/content-aside.php:37
 #: ../twentyfourteen/content-audio.php:37
 #: ../twentyfourteen/content-gallery.php:37
-#: ../twentyfourteen/content-image.php:37
-#: ../twentyfourteen/content-link.php:37
+#: ../twentyfourteen/content-image.php:37 ../twentyfourteen/content-link.php:37
 #: ../twentyfourteen/content-quote.php:37
 #: ../twentyfourteen/content-video.php:37 ../twentyfourteen/content.php:38
 #: ../twentyfourteen/inc/widgets.php:194
@@ -2027,15 +2020,13 @@ msgstr ""
 #: ../shoemaker/template-parts/content.php:130
 #: ../thrive/template-parts/content-page.php:20
 #: ../thrive/template-parts/content-single.php:64
-#: ../thrive/template-parts/content.php:83
-#: ../twentyfifteen/content-link.php:36 ../twentyfifteen/content-page.php:25
-#: ../twentyfifteen/content.php:38 ../twentyfifteen/image.php:59
-#: ../twentyfourteen/content-aside.php:53
+#: ../thrive/template-parts/content.php:83 ../twentyfifteen/content-link.php:36
+#: ../twentyfifteen/content-page.php:25 ../twentyfifteen/content.php:38
+#: ../twentyfifteen/image.php:59 ../twentyfourteen/content-aside.php:53
 #: ../twentyfourteen/content-audio.php:53
 #: ../twentyfourteen/content-gallery.php:53
-#: ../twentyfourteen/content-image.php:53
-#: ../twentyfourteen/content-link.php:53 ../twentyfourteen/content-page.php:22
-#: ../twentyfourteen/content-quote.php:53
+#: ../twentyfourteen/content-image.php:53 ../twentyfourteen/content-link.php:53
+#: ../twentyfourteen/content-page.php:22 ../twentyfourteen/content-quote.php:53
 #: ../twentyfourteen/content-video.php:53 ../twentyfourteen/content.php:61
 #: ../twentyfourteen/image.php:54 ../twentysixteen/image.php:56
 #: ../twentysixteen/template-parts/content-page.php:23
@@ -3314,8 +3305,8 @@ msgstr ""
 
 #: ../thrive/buddypress/members/single/settings/general.php:10
 msgid ""
-"Current Password <span>(required to update email or change current password)"
-"</span>"
+"Current Password <span>(required to update email or change current "
+"password)</span>"
 msgstr ""
 
 #: ../thrive/buddypress/members/single/settings/general.php:11
@@ -4755,9 +4746,8 @@ msgstr ""
 #: ../twentyfifteen/image.php:71 ../twentyfourteen/content-aside.php:40
 #: ../twentyfourteen/content-audio.php:40
 #: ../twentyfourteen/content-gallery.php:40
-#: ../twentyfourteen/content-image.php:40
-#: ../twentyfourteen/content-link.php:40 ../twentyfourteen/content-page.php:28
-#: ../twentyfourteen/content-quote.php:40
+#: ../twentyfourteen/content-image.php:40 ../twentyfourteen/content-link.php:40
+#: ../twentyfourteen/content-page.php:28 ../twentyfourteen/content-quote.php:40
 #: ../twentyfourteen/content-video.php:40 ../twentyfourteen/content.php:42
 #: ../twentyfourteen/image.php:34
 #: ../twentyfourteen/page-templates/contributors.php:35
@@ -6226,8 +6216,7 @@ msgstr ""
 #: ../twentyfourteen/content-aside.php:48
 #: ../twentyfourteen/content-audio.php:48
 #: ../twentyfourteen/content-gallery.php:48
-#: ../twentyfourteen/content-image.php:48
-#: ../twentyfourteen/content-link.php:48
+#: ../twentyfourteen/content-image.php:48 ../twentyfourteen/content-link.php:48
 #: ../twentyfourteen/content-quote.php:48
 #: ../twentyfourteen/content-video.php:48 ../twentyfourteen/content.php:56
 #: ../twentyfourteen/inc/template-tags.php:222
@@ -6552,7 +6541,7 @@ msgstr ""
 
 #: ../thrive/thrive/theme-widgets/featured-member.php:14
 msgid "Thrive: Featured Member"
-msgstr "Thrive: Lombardi Points"
+msgstr "Thrive: Lombardi points"
 
 #: ../thrive/thrive/theme-widgets/featured-member.php:15
 msgid "Use this widget to feature a member."

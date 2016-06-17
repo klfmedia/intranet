@@ -49,13 +49,28 @@ MODIFY THE HEIGHT OF THE BRANDING CONTRAINER ON TOP OF THE PAGE TO ALLOW TO MINI
 	IT WAS ORIGINALLY 100
 }
 
+MODIFY THE HEADER MENU TO ADD THE USERNAME AND USER PICTURE (THIS CHANGE IS ONLY FOR THE 1 COLUMN LAYOUT)
+{
+	wp-content/themes/thrive/inc/thrive-nav.php
+	line 50
+	Add the folowing code:
+	<div>
+		<div >
+			<a href="<?php echo bp_loggedin_user_domain(); ?>" style="color: white; font-weight: 700;">
+				<?php bp_loggedin_user_avatar( 'width=' . 40 . '&height=' . 40 );
+				echo "   ". esc_attr(bp_get_user_firstname(bp_get_loggedin_user_fullname()));?>
+			</a>
+		</div>
+	</div>
+}
+
 MODIFY THE QUESTIONS FORM FROM THE HOMEPAGE TO REMOVE THE SEARCH BAR AND THE FILTER AND TO SHOW ONLY THE OPEN QUESTIONS
 {
 	wp-content/plugins/dw-question-answer/inc/Shortcode.php
 	line 8			'dwqa-list-questions-homepage',
 	line 22			add_shortcode( 'dwqa-list-questions-homepage', array( $this, 'archive_question_homepage') );
 	line 56 		make a copy of the function "PUBLIC FUNCTION ARCHIVE_QUESTION()" and rename it as "PUBLIC FUNCTION ARCHIVE_QUESTION_HOMEPAGE()"
-		line 63		modify the existing line to: 		"dwqa_load_template( 'archive', 'question-homepage' );"
+	line 63			modify the existing line to: 		"dwqa_load_template( 'archive', 'question-homepage' );"
 		
 	********** THERE IS A COPY OF THE archive-question-homepage.php LOCATED ON wwp-content\themes\thrive-child\plugins\dw-question-answer\templates
 	ALSO MAKE A COPY OF THE archive-question.php FILE AND RENAME IT archive-question-homepage.php located on
@@ -94,10 +109,18 @@ IN CASE THAT WE WANT TO REMOVE THE GROUP NAMES FROM THE DROP DOWN LIST ON THE "W
 	Comment out lines from 62 to 68
 }
 
+TO CHANGE THE ARROW ON THE BACK BUTTON FOR THE ALBUM SELECT ON HOMEPAGE
+{
+	wp-content/plugins/foogallery/extensions/albums/album-stack.php
+	line 16
+	MODIFY &larr AND CHANGE IT FOR &laquo;
+}
+
 TO CHANGE THE CAPTION OF THE MEMBERS WIDGET TO READ EMPLOYEES ON THE HOMEPAGE
 {
 	WE CREATE A LANGUAGE FILE USING THE PROGRAM POEDIT 
-	WE CREATE THE FOLDER wp-content\languages\plugins AND INSIDE WE PLACE THE 2 CREATED FILES buddypress-en_US.po AND buddypress-en_US.mo
+	WE CREATE THE FOLDER wp-content\languages\plugins AND INSIDE WE PLACE THE 2 CREATED FILES 
+		buddypress-en_US.po AND buddypress-en_US.mo
 	INSIDE WE MADE THE NECESSARY CHANGES FROM MEMBERS TO EMPLOYEES WHERE APPLICABLE 
 }
 
@@ -109,14 +132,7 @@ TO CHANGE THE WAY THE NEW EMPLOYEES WIDGET WORKS
 	<!--item-avatar--><div class="col-xs-3 pd-right-5">
 }
 
-TO CHANGE THE ARROW ON THE BACK BUTTON FOR THE ALBUM SELECT ON HOMEPAGE
-{
-	wp-content/plugins/foogallery/extensions/albums/album-stack.php
-	line 16
-	MODIFY &larr AND CHANGE IT FOR &laquo;
-}
-
-TO MAKE THE BIRTHDAY WIDGET SHOW THE NEXT 6 MONTHS OF BIRTHDAYS STARTING ON CURRENT DAY
+TO MAKE THE BIRTHDAY WIDGET SHOW THE NEXT 12 MONTHS OF BIRTHDAYS STARTING ON CURRENT DAY
 {
 	wp-content/themes/thrive/thrive/theme-widgets/members-birthday.php
 	line 86
@@ -125,5 +141,23 @@ TO MAKE THE BIRTHDAY WIDGET SHOW THE NEXT 6 MONTHS OF BIRTHDAYS STARTING ON CURR
 //	$scope = strtotime( sprintf("December 31 %s", date("Y") ) );
 	
 }
+
+TO MAKE CHANGES TO THE FEATURE MEMBER WIDGET
+{
+	1.- TO MAKE THE EMPLOYEES SHOW AS A DROPDOWN LIST FOR EASY SELECTION
+	wp-content/themes/thrive/thrive/theme-widgets/featured-member.php
+	line 130
+	ADD THE FOLOWING CODE:
+	
+	<select name="<?php echo $this->get_field_name( 'username' ); ?>" >
+		<option value="-1"><?php echo('Select a username'); ?></option>
+		<?php print rul_returnusernames($rul_usernames_existing); ?>
+	</select>
+
+	AND DELETE THE FOLOWING EXISTING LINE:
+	
+	<input class="widefat" id="<?php echo $this->get_field_id( 'username' ); ?>" name="<?php echo $this->get_field_name( 'username' ); ?>" type="text" value="<?php echo esc_attr( $username  ); ?>">
+
+	2.- TO CHANGE THE CAPTION OF THE FEATURE MEMBER WIDGET TO READ LOMBARDI POINTS
 
 }

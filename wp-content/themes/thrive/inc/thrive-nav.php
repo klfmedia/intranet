@@ -47,9 +47,16 @@
 								<img class="img-site-logo visible-xs" src="<?php echo esc_url( $mobile_logo_url ); ?>" alt="<?php _e('Site Mobile Logo', 'thrive'); ?>" />
 							</a>
 						</div>
+						<div>
+							<div >
+								<a href="<?php echo bp_loggedin_user_domain(); ?>" style="color: white; font-weight: 700;">
+									<?php bp_loggedin_user_avatar( 'width=' . 40 . '&height=' . 40 );
+									echo "   ". esc_attr(bp_get_user_firstname(bp_get_loggedin_user_fullname()));?>
+								</a>
+							</div>
+						</div>
 					</div>
 				<?php } else { ?>
-
 					<div class="col-md-3 col-sm-6 col-xs-12 visible-xs">
 						<div id="site-logo" class="">
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">

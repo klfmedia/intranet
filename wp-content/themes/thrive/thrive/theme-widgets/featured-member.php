@@ -127,7 +127,10 @@ class Thrive_Featured_Member_Widget extends WP_Widget {
 			
 			<label for="<?php echo $this->get_field_id( 'username' ); ?>"><?php _e( 'Username:', 'thrive' ); ?></label>
 
-			<input class="widefat" id="<?php echo $this->get_field_id( 'username' ); ?>" name="<?php echo $this->get_field_name( 'username' ); ?>" type="text" value="<?php echo esc_attr( $username  ); ?>">
+			<select name="<?php echo $this->get_field_name( 'username' ); ?>" >
+				<option value="-1"><?php echo('Select a username'); ?></option>
+				<?php print rul_returnusernames($rul_usernames_existing); ?>
+			</select>
 			
 			<span class="help-text">
 				<em><?php _e('Enter the username of the member that you want to be featured.', 'thrive'); ?></em>

@@ -14,8 +14,16 @@ Version: 1.0.0
   width: 101%; 
 }
 
-/*CHANGE THE HEIGHT OF THE TOP BAR WHERE THE LOGO IS*/
-/*CHANGE THE PADDING TO 10px, it was 30px*/
+/************** MAKE THE LOGO ALIGN LEFT WITH THE USER INFO *********************/
+div#site-logo {
+    float: left;
+    padding-right: 35px;
+}
+/************* END OF CHANGE ******************/
+
+
+/************** CHANGE THE HEIGHT OF THE TOP BAR WHERE THE LOGO IS *********************/
+					/******* CHANGE THE PADDING TO 10px  *******/
 #thrive_nav {
   display: table;
   width: 100%;
@@ -25,6 +33,9 @@ Version: 1.0.0
 		  z-index: 10000;
 /*		END OF TO MAKE THE TOP MENU FIXED AT THE TOP*/
 }
+/************* END OF CHANGE ******************/
+
+
 #content.site-content{
 	margin-top: 66px;
 }
